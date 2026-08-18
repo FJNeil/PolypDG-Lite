@@ -25,7 +25,7 @@ export default function Home() {
         <div className="core"><small>DISTILLED MODEL</small><strong>DG</strong><em>Lite</em></div><div className="signal"><i /><i /><i /></div>
         <div className="domain domainB"><b>LOCO</b><span>Unseen center</span></div>
       </div>
-      <p className="authorLine">Shih-Wei Fan Chiang and Yen-Chiang Chang / Chung Shan Medical University</p>
+      <p className="authorLine">Shih-Wei Fan Chiang and Yen-Ching Chang / Chung Shan Medical University</p>
     </section>
     <section className="statement" id="research"><div className="shell statementInner"><p className="sectionLabel">01 / Research question</p><h2>Can cross-center robustness survive <em>compression</em> into a real-time student?</h2><p className="zh">A strict leave-one-center-out study across 1,537 image-mask pairs from six clinical centers.</p></div></section>
     <section className="shell contributions">

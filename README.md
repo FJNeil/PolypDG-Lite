@@ -7,15 +7,18 @@
 [![Dataset](https://img.shields.io/badge/Dataset-PolypGen-6f8178?style=flat-square)](https://doi.org/10.1038/s41597-023-01981-y)
 [![Protocol](https://img.shields.io/badge/Evaluation-6--center_LOCO-6f8178?style=flat-square)](#evaluation-protocol)
 
-**Shih-Wei Fan Chiang**<sup>1</sup>, **Yen-Chiang Chang**<sup>1,2</sup>  
-<sup>1</sup> Department of Medical Informatics, Chung Shan Medical University  
+**Shih-Wei Fan Chiang**<sup>1</sup>, **Yen-Ching Chang**<sup>1,2</sup><br>
+<sup>1</sup> Department of Medical Informatics, Chung Shan Medical University<br>
 <sup>2</sup> Department of Medical Imaging, Chung Shan Medical University Hospital
+
+- **Student researcher, presentation author, and presenter:** Shih-Wei Fan Chiang
+- **Faculty advisor and research co-author:** Yen-Ching Chang
 
 PolypDG-Lite is a four-stage framework for robust colonoscopic polyp segmentation under cross-center domain shift. It combines a strict leave-one-center-out (LOCO) protocol, consistency-trained SegFormer-B2 teachers, knowledge distillation into compact students, and FP16 low-power deployment validation.
 
 ## Portfolio quick tour
 
-This repository accompanies the ICATI 2026 conference presentation. **Shih-Wei Fan Chiang is the first author and conference presenter.** For a short review, follow this order:
+This repository accompanies the ICATI 2026 conference presentation, **authored and presented by student researcher Shih-Wei Fan Chiang under the supervision of Yen-Ching Chang**, faculty advisor and research co-author. For a short review, follow this order:
 
 1. Read the [key results](#key-results) and [four-stage framework](#framework) below.
 2. Open the [15-slide conference presentation](docs/PolypDG-Lite-conference-presentation.pdf).
@@ -23,7 +26,7 @@ This repository accompanies the ICATI 2026 conference presentation. **Shih-Wei F
 4. Review the selected experiment implementation and reproducibility notes in [`research_code/`](research_code/).
 5. Visit the [live research showcase](https://polypdg-lite-research.fjff.chatgpt.site).
 
-The public artifact intentionally contains selected portable scripts rather than patient data, model checkpoints, or the complete raw experiment workspace.
+This research artifact intentionally contains selected portable scripts rather than patient data, model checkpoints, or the complete raw experiment workspace.
 
 ## Key results
 
@@ -118,7 +121,7 @@ The PolypGen images, clinical-center data, and trained checkpoints are **not red
 ```bibtex
 @inproceedings{chiang2026polypdglite,
   title     = {PolypDG-Lite: A Deployment-Oriented Approach for Cross-Center Colonoscopic Polyp Segmentation via Domain Generalization and Low-Power Knowledge Distillation},
-  author    = {Chiang, Shih-Wei Fan and Chang, Yen-Chiang},
+  author    = {Chiang, Shih-Wei Fan and Chang, Yen-Ching},
   booktitle = {The 11th International Conference on Advanced Technology Innovation},
   year      = {2026}
 }
