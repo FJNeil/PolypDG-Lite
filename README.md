@@ -24,7 +24,7 @@ This repository accompanies the ICATI 2026 full paper by student researcher Shih
 2. Open the [16-page full paper](docs/PolypDG-Lite-full-paper.pdf).
 3. Inspect the verified, machine-readable tables in [`results/`](results/).
 4. Review the selected experiment implementation and reproducibility notes in [`research_code/`](research_code/).
-5. Open the [project page](https://polypdg-lite-research.fjff.chatgpt.site) for a full-screen paper view.
+5. Open the [project page](https://polypdg-lite-research.fjff.chatgpt.site) for a full-screen view of the conference presentation.
 
 This research artifact intentionally contains selected portable scripts rather than patient data, model checkpoints, or the complete raw experiment workspace.
 
