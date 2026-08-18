@@ -3,6 +3,7 @@
 ### A deployment-oriented approach for cross-center colonoscopic polyp segmentation via domain generalization and low-power knowledge distillation
 
 [![Project page](https://img.shields.io/badge/Project_Page-Live-d7ff43?style=flat-square&labelColor=14211c)](https://polypdg-lite-research.fjff.chatgpt.site)
+[![Conference presentation](https://img.shields.io/badge/Conference_Presentation-PDF-bb2b2b?style=flat-square&labelColor=14211c)](docs/PolypDG-Lite-conference-presentation.pdf)
 [![Dataset](https://img.shields.io/badge/Dataset-PolypGen-6f8178?style=flat-square)](https://doi.org/10.1038/s41597-023-01981-y)
 [![Protocol](https://img.shields.io/badge/Evaluation-6--center_LOCO-6f8178?style=flat-square)](#evaluation-protocol)
 
@@ -11,6 +12,18 @@
 <sup>2</sup> Department of Medical Imaging, Chung Shan Medical University Hospital
 
 PolypDG-Lite is a four-stage framework for robust colonoscopic polyp segmentation under cross-center domain shift. It combines a strict leave-one-center-out (LOCO) protocol, consistency-trained SegFormer-B2 teachers, knowledge distillation into compact students, and FP16 low-power deployment validation.
+
+## Portfolio quick tour
+
+This repository accompanies the ICATI 2026 conference presentation. **Shih-Wei Fan Chiang is the first author and conference presenter.** For a short review, follow this order:
+
+1. Read the [key results](#key-results) and [four-stage framework](#framework) below.
+2. Open the [15-slide conference presentation](docs/PolypDG-Lite-conference-presentation.pdf).
+3. Inspect the verified, machine-readable tables in [`results/`](results/).
+4. Review the selected experiment implementation and reproducibility notes in [`research_code/`](research_code/).
+5. Visit the [live research showcase](https://polypdg-lite-research.fjff.chatgpt.site).
+
+The public artifact intentionally contains selected portable scripts rather than patient data, model checkpoints, or the complete raw experiment workspace.
 
 ## Key results
 
@@ -24,6 +37,8 @@ PolypDG-Lite is a four-stage framework for robust colonoscopic polyp segmentatio
 The final FP16 student has an estimated 7.08 MB parameter footprint, mean power draw of 14.77 W, and energy cost of 0.3818 J/frame. FLOPs were not reported in the verified experiment artifacts and are intentionally omitted.
 
 ## Framework
+
+![Four-stage PolypDG-Lite research framework](docs/framework-overview.png)
 
 1. **Cross-center diagnosis** - establish a U-Net baseline under center-level LOCO.
 2. **Robust teacher** - train SegFormer-B2 with prediction consistency across appearance-perturbed views.
@@ -49,16 +64,29 @@ The following C4 cases compare the input, ground truth, U-Net baseline, robust t
 ## Code map
 
 ```text
-research_code/
-├── stage2/     # SegFormer-B2 consistency teacher
-├── stage3/     # SegFormer-B0 knowledge-distilled student
-├── stage4/     # FP16 re-evaluation, runtime, and power profiling
-└── analysis/   # final tables and qualitative failure analysis
-results/        # verified machine-readable paper results
-app/            # responsive research showcase
+docs/             # conference presentation and framework overview
+research_code/    # selected teacher, distillation, deployment, and analysis scripts
+results/          # verified machine-readable experiment tables
+app/              # responsive research-showcase interface
+public/           # website images and qualitative evidence
+worker/           # website deployment entry point
+tests/            # rendered-site checks
 ```
 
 The repository contains selected research scripts recovered from the experiment workspace. Local machine paths have been replaced with environment variables, but the full training pipeline still requires the PolypGen-derived LOCO directory layout and fold checkpoints described in [`research_code/README.md`](research_code/README.md).
+
+Folders such as `db/`, `drizzle/`, and `examples/` support the research-showcase starter and are not part of the model-training pipeline.
+
+## Research artifacts
+
+| Artifact | Purpose |
+|---|---|
+| [Conference presentation](docs/PolypDG-Lite-conference-presentation.pdf) | Fifteen-slide ICATI 2026 presentation covering motivation, protocol, methods, results, and conclusions |
+| [`results/stagewise_summary.csv`](results/stagewise_summary.csv) | Verified stage-by-stage segmentation results |
+| [`results/deployment_benchmark.csv`](results/deployment_benchmark.csv) | FP32/FP16 speed, memory, power, and energy measurements |
+| [`results/dataset_loco_split.csv`](results/dataset_loco_split.csv) | Six-center LOCO dataset accounting |
+| [`results/qualitative_c4_case_selection.csv`](results/qualitative_c4_case_selection.csv) | Auditable selection of qualitative C4 cases |
+| [`research_code/README.md`](research_code/README.md) | Reproducibility scope, expected paths, and limitations |
 
 ## Environment
 
