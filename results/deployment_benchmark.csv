@@ -1,0 +1,5 @@
+﻿Model,Precision,Mean_Dice,C4_Dice,FPS,Latency_ms,VRAM_MB,Params_M,Estimated_Size_MB,Decision
+SegFormer-B2 Teacher,FP32,79.61,66.13,31.44,32.08,422.35,27.35,104.32,Accurate but heavy
+SegFormer-B0,FP32,73.15,47.02,88.9,11.26,125.64,3.71,14.17,Fast but weak C4
+SegFormer-B0 + KD,FP32,77.05,60.44,87.05,11.57,125.64,3.71,14.17,Balanced
+SegFormer-B0 + KD,FP16,77.05,60.44,95.26,10.53,55.43,3.71,7.08,Final deployment candidate

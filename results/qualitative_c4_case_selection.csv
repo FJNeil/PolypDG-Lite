@@ -1,0 +1,6 @@
+Stem,U-Net_Dice,Teacher_Dice,B0_Baseline_Dice,B0_KD_Dice,Case_Type
+C4_6_endocv2021_positive_1308,0.0,0.0,0.0,1.0,Improved over U-Net
+C4_27_endocv2021_positive_27,0.0,0.0,0.0,1.0,Improved over U-Net
+C4_25_endocv2021_positive_3,1.0,1.0,0.0,1.0,KD improvement
+C4_14_endocv2021_positive_503,0.0,1.0,0.0,1.0,KD improvement
+C4_23_endocv2021_positive_269,0.0,0.9345693940,0.7554909561,0.0,Remaining failure

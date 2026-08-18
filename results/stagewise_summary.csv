@@ -1,0 +1,5 @@
+﻿Stage,Model,Purpose,Mean_Dice,Worst_Center,C4_Dice,Mean_HD95,Mean_ASSD,Mean_Abs_Delta_Dice,
+Stage 1,U-Net + LOCO,Cross-center diagnostic baseline,63.4,C4,43.45,71.13,25.63,12.65,
+Stage 2,SegFormer-B2 + Consistency,Robust teacher,79.61,C4,66.13,29.15,8.32,7.82,
+Stage 3,SegFormer-B0 + KD,Final lightweight student,77.05,C4,60.44,32.81,10.63,8.26,
+Stage 4,SegFormer-B0 + KD FP16,Final deployment candidate,77.05,C4,60.44,32.81,10.63,8.26,
