@@ -48,6 +48,18 @@ The final FP16 student has an estimated 7.08 MB parameter footprint, mean power 
 3. **Lightweight distillation** - transfer teacher probability maps to DDRNet-23-slim, BiSeNetV2, and SegFormer-B0 students.
 4. **Deployment validation** - re-evaluate the selected SegFormer-B0 + KD student under FP16 and profile speed, memory, power, and energy per frame.
 
+### Stage 2 - Teacher training and selection
+
+![Stage 2 teacher training and selection with consistency learning](docs/stage2-teacher-training-and-selection.png)
+
+The SegFormer-B2 teacher processes an original view and an appearance-perturbed view. Consistency learning minimizes the difference between their probability maps, encouraging predictions that remain stable under brightness, color, blur, and compression changes.
+
+### Stage 3 - Knowledge distillation
+
+![Stage 3 knowledge distillation from SegFormer-B2 to a lightweight student](docs/stage3-knowledge-distillation.png)
+
+The selected teacher produces a soft probability map for the lightweight student. Training combines knowledge-distillation loss with supervised segmentation loss, transferring cross-center behavior while retaining direct ground-truth supervision.
+
 ## Evaluation protocol
 
 Experiments use the clean, center-labeled subset of the [PolypGen](https://doi.org/10.1038/s41597-023-01981-y) dataset: **1,537 image-mask pairs from six clinical centers** (C1-C6). Each LOCO fold holds out one complete center as an unseen test domain; validation data comes only from the remaining training centers.
@@ -67,7 +79,7 @@ The following C4 cases compare the input, ground truth, U-Net baseline, robust t
 ## Code map
 
 ```text
-docs/             # conference presentation and framework overview
+docs/             # conference presentation and framework figures
 research_code/    # selected teacher, distillation, deployment, and analysis scripts
 results/          # verified machine-readable experiment tables
 app/              # responsive research-showcase interface
