@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://polypdg-lite-research.fjff.chatgpt.site"),
-  title: "PolypDG-Lite | Cross-Center Polyp Segmentation",
-  description: "A deployment-oriented framework combining six-center LOCO evaluation, consistency learning, knowledge distillation, and low-power FP16 validation.",
+  title: "PolypDG-Lite | Full Paper",
+  description: "The ICATI 2026 full paper on cross-center colonoscopic polyp segmentation, knowledge distillation, and low-power deployment.",
   openGraph: {
     title: "PolypDG-Lite",
     description: "Cross-center robustness. Low-power deployment.",

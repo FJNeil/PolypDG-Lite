@@ -3,7 +3,7 @@
 ### A deployment-oriented approach for cross-center colonoscopic polyp segmentation via domain generalization and low-power knowledge distillation
 
 [![Project page](https://img.shields.io/badge/Project_Page-Live-d7ff43?style=flat-square&labelColor=14211c)](https://polypdg-lite-research.fjff.chatgpt.site)
-[![Conference presentation](https://img.shields.io/badge/Conference_Presentation-PDF-bb2b2b?style=flat-square&labelColor=14211c)](docs/PolypDG-Lite-conference-presentation.pdf)
+[![Full paper](https://img.shields.io/badge/Full_Paper-PDF-bb2b2b?style=flat-square&labelColor=14211c)](docs/PolypDG-Lite-full-paper.pdf)
 [![Dataset](https://img.shields.io/badge/Dataset-PolypGen-6f8178?style=flat-square)](https://doi.org/10.1038/s41597-023-01981-y)
 [![Protocol](https://img.shields.io/badge/Evaluation-6--center_LOCO-6f8178?style=flat-square)](#evaluation-protocol)
 
@@ -11,20 +11,20 @@
 <sup>1</sup> Department of Medical Informatics, Chung Shan Medical University<br>
 <sup>2</sup> Department of Medical Imaging, Chung Shan Medical University Hospital
 
-- **Student researcher, presentation author, and presenter:** Shih-Wei Fan Chiang
+- **Student researcher and first author:** Shih-Wei Fan Chiang
 - **Faculty advisor and research co-author:** Yen-Ching Chang
 
 PolypDG-Lite is a four-stage framework for robust colonoscopic polyp segmentation under cross-center domain shift. It combines a strict leave-one-center-out (LOCO) protocol, consistency-trained SegFormer-B2 teachers, knowledge distillation into compact students, and FP16 low-power deployment validation.
 
 ## Portfolio quick tour
 
-This repository accompanies the ICATI 2026 conference presentation, **authored and presented by student researcher Shih-Wei Fan Chiang under the supervision of Yen-Ching Chang**, faculty advisor and research co-author. For a short review, follow this order:
+This repository accompanies the ICATI 2026 full paper by student researcher Shih-Wei Fan Chiang and faculty advisor Yen-Ching Chang. For a short review, follow this order:
 
 1. Read the [key results](#key-results) and [four-stage framework](#framework) below.
-2. Open the [15-slide conference presentation](docs/PolypDG-Lite-conference-presentation.pdf).
+2. Open the [16-page full paper](docs/PolypDG-Lite-full-paper.pdf).
 3. Inspect the verified, machine-readable tables in [`results/`](results/).
 4. Review the selected experiment implementation and reproducibility notes in [`research_code/`](research_code/).
-5. Visit the [live research showcase](https://polypdg-lite-research.fjff.chatgpt.site).
+5. Open the [project page](https://polypdg-lite-research.fjff.chatgpt.site) for a full-screen paper view.
 
 This research artifact intentionally contains selected portable scripts rather than patient data, model checkpoints, or the complete raw experiment workspace.
 
@@ -72,17 +72,31 @@ Results include region metrics (Dice, IoU), boundary metrics (HD95, ASSD), worst
 
 ## Qualitative evidence
 
-The following C4 cases compare the input, ground truth, U-Net baseline, robust teacher, undistilled student, and final distilled student. The selected set includes improvements as well as a remaining failure case to avoid cherry-picking only successful predictions.
+This diagnostic figure asks two questions: **Does the final student suppress false positives on empty-mask frames?** and **Where does it still miss a true lesion?** Read each row from left to right: input image, ground truth, U-Net baseline, robust teacher, undistilled student, and final distilled student.
+
+- **Green overlay:** ground-truth lesion mask.
+- **Red overlay:** model prediction.
+- **Dice = 100% with no colored mask:** both ground truth and prediction are empty. This is correct rejection of a false positive, not perfect lesion delineation.
+- **Remaining failure:** the final row documents a true lesion missed by the distilled student, preventing the evidence from showing only successful cases.
+
+Because the full grid is large and intended for audit rather than first-glance presentation, it is collapsed by default.
+
+<details>
+<summary><strong>Open the full five-case C4 comparison</strong></summary>
+
+<br>
 
 ![Five qualitative C4 cases comparing ground truth and four model configurations](public/results/qualitative-c4-comparison.png)
+
+</details>
 
 ## Code map
 
 ```text
-docs/             # conference presentation and framework figures
+docs/             # full paper, conference presentation, and framework figures
 research_code/    # selected teacher, distillation, deployment, and analysis scripts
 results/          # verified machine-readable experiment tables
-app/              # responsive research-showcase interface
+app/              # full-screen paper viewer
 public/           # website images and qualitative evidence
 worker/           # website deployment entry point
 tests/            # rendered-site checks
@@ -96,7 +110,8 @@ Folders such as `db/`, `drizzle/`, and `examples/` support the research-showcase
 
 | Artifact | Purpose |
 |---|---|
-| [Conference presentation](docs/PolypDG-Lite-conference-presentation.pdf) | Fifteen-slide ICATI 2026 presentation covering motivation, protocol, methods, results, and conclusions |
+| [Full paper](docs/PolypDG-Lite-full-paper.pdf) | Sixteen-page ICATI 2026 manuscript with methodology, experiments, discussion, and references |
+| [Conference presentation](docs/PolypDG-Lite-conference-presentation.pdf) | Fifteen-slide conference talk retained as a supplementary overview |
 | [`results/stagewise_summary.csv`](results/stagewise_summary.csv) | Verified stage-by-stage segmentation results |
 | [`results/deployment_benchmark.csv`](results/deployment_benchmark.csv) | FP32/FP16 speed, memory, power, and energy measurements |
 | [`results/dataset_loco_split.csv`](results/dataset_loco_split.csv) | Six-center LOCO dataset accounting |
