@@ -16,6 +16,18 @@
 
 PolypDG-Lite is a four-stage framework for robust colonoscopic polyp segmentation under cross-center domain shift. It combines a strict leave-one-center-out (LOCO) protocol, consistency-trained SegFormer-B2 teachers, knowledge distillation into compact students, and FP16 low-power deployment validation.
 
+## First-author contribution
+
+As the student researcher and first author, Shih-Wei Fan Chiang led the research implementation and artifact preparation represented in this repository:
+
+- designed and implemented the six-center LOCO evaluation workflow;
+- developed the consistency-trained teacher and knowledge-distillation experiments;
+- implemented FP32/FP16 deployment, memory, speed, power, and energy benchmarking;
+- performed result aggregation, qualitative failure analysis, and reproducibility packaging;
+- prepared the full paper, conference presentation, and research showcase.
+
+Yen-Ching Chang served as faculty advisor and research co-author.
+
 ## Portfolio quick tour
 
 This repository accompanies the ICATI 2026 full paper by student researcher Shih-Wei Fan Chiang and faculty advisor Yen-Ching Chang. For a short review, follow this order:
