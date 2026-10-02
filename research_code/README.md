@@ -1,6 +1,6 @@
 # Research code
 
-These are the selected scripts used to build the evidence chain reported in the paper. They preserve the original experiment logic while replacing user-specific absolute paths with environment-variable configuration.
+This directory contains both curated portable scripts and the complete available first-party PolypDG-Lite source snapshot. The curated scripts preserve the original experiment logic with environment-variable configuration; the snapshot retains every available model and experiment script with its data root changed to `./data`.
 
 ## Expected layout
 
@@ -26,7 +26,16 @@ experiment-root/
 - `stage4/power_joule_per_frame.py`: `nvidia-smi` power sampling and J/frame analysis.
 - `analysis/`: final table generation and qualitative failure analysis.
 
-The Stage 1 U-Net experiment originated as a development notebook and is not included until it is cleaned into a portable script. The verified Stage 1 aggregate results remain available in `results/stagewise_summary.csv`.
+## Complete model source
+
+[`full_source_snapshot/`](full_source_snapshot/) contains the complete available first-party source for every reported model and experiment variant:
+
+- Stage 1 U-Net + LOCO notebook and model definition;
+- Stage 2 SegFormer-B2 consistency and perturbation-bank consistency teachers;
+- Stage 3 SegFormer-B0, DDRNet-23-slim, and BiSeNetV2 baselines and KD variants; and
+- Stage 4 FP16, performance, power, energy, and all-stage validation tooling.
+
+Original source filenames are deliberately retained for traceability and compatibility with the all-stage validation runner. See its README for the model-to-file map.
 
 ## Reproducibility note
 

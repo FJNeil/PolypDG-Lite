@@ -36,7 +36,7 @@ This repository accompanies the ICATI 2026 research project by student researche
 3. Review the selected experiment implementation and reproducibility notes in [`research_code/`](research_code/).
 4. Open the [project page](https://polypdg-lite-research.fjff.chatgpt.site) for a full-screen view of the conference presentation.
 
-This research artifact intentionally contains selected portable scripts rather than patient data, model checkpoints, or the complete raw experiment workspace.
+This research artifact includes the complete available first-party model and experiment source, but excludes patient data, model checkpoints, and the raw experiment workspace.
 
 ## Key results
 
@@ -104,7 +104,7 @@ Because the full grid is large and intended for audit rather than first-glance p
 
 ```text
 docs/             # conference presentation and framework figures
-research_code/    # selected teacher, distillation, deployment, and analysis scripts
+research_code/    # complete available model, training, deployment, and analysis source
 results/          # verified machine-readable experiment tables
 app/              # full-screen conference-presentation viewer
 public/           # website images and qualitative evidence
@@ -125,6 +125,7 @@ Folders such as `db/`, `drizzle/`, and `examples/` support the research-showcase
 | [`results/deployment_benchmark.csv`](results/deployment_benchmark.csv) | FP32/FP16 speed, memory, power, and energy measurements |
 | [`results/dataset_loco_split.csv`](results/dataset_loco_split.csv) | Six-center LOCO dataset accounting |
 | [`results/qualitative_c4_case_selection.csv`](results/qualitative_c4_case_selection.csv) | Auditable selection of qualitative C4 cases |
+| [`research_code/full_source_snapshot/`](research_code/full_source_snapshot/) | Complete available first-party model and experiment source |
 | [`research_code/README.md`](research_code/README.md) | Reproducibility scope, expected paths, and limitations |
 
 ## Environment
