@@ -3,7 +3,6 @@
 ### A deployment-oriented approach for cross-center colonoscopic polyp segmentation via domain generalization and low-power knowledge distillation
 
 [![Project page](https://img.shields.io/badge/Project_Page-Live-d7ff43?style=flat-square&labelColor=14211c)](https://polypdg-lite-research.fjff.chatgpt.site)
-[![Full paper](https://img.shields.io/badge/Full_Paper-PDF-bb2b2b?style=flat-square&labelColor=14211c)](docs/PolypDG-Lite-full-paper.pdf)
 [![Dataset](https://img.shields.io/badge/Dataset-PolypGen-6f8178?style=flat-square)](https://doi.org/10.1038/s41597-023-01981-y)
 [![Protocol](https://img.shields.io/badge/Evaluation-6--center_LOCO-6f8178?style=flat-square)](#evaluation-protocol)
 
@@ -24,19 +23,18 @@ As the student researcher and first author, Shih-Wei Fan Chiang led the research
 - developed the consistency-trained teacher and knowledge-distillation experiments;
 - implemented FP32/FP16 deployment, memory, speed, power, and energy benchmarking;
 - performed result aggregation, qualitative failure analysis, and reproducibility packaging;
-- prepared the full paper, conference presentation, and research showcase.
+- prepared the conference presentation and research showcase.
 
 Yen-Ching Chang served as faculty advisor and research co-author.
 
 ## Portfolio quick tour
 
-This repository accompanies the ICATI 2026 full paper by student researcher Shih-Wei Fan Chiang and faculty advisor Yen-Ching Chang. For a short review, follow this order:
+This repository accompanies the ICATI 2026 research project by student researcher Shih-Wei Fan Chiang and faculty advisor Yen-Ching Chang. For a short review, follow this order:
 
 1. Read the [key results](#key-results) and [four-stage framework](#framework) below.
-2. Open the [16-page full paper](docs/PolypDG-Lite-full-paper.pdf).
-3. Inspect the verified, machine-readable tables in [`results/`](results/).
-4. Review the selected experiment implementation and reproducibility notes in [`research_code/`](research_code/).
-5. Open the [project page](https://polypdg-lite-research.fjff.chatgpt.site) for a full-screen view of the conference presentation.
+2. Inspect the verified, machine-readable tables in [`results/`](results/).
+3. Review the selected experiment implementation and reproducibility notes in [`research_code/`](research_code/).
+4. Open the [project page](https://polypdg-lite-research.fjff.chatgpt.site) for a full-screen view of the conference presentation.
 
 This research artifact intentionally contains selected portable scripts rather than patient data, model checkpoints, or the complete raw experiment workspace.
 
@@ -105,10 +103,10 @@ Because the full grid is large and intended for audit rather than first-glance p
 ## Code map
 
 ```text
-docs/             # full paper, conference presentation, and framework figures
+docs/             # conference presentation and framework figures
 research_code/    # selected teacher, distillation, deployment, and analysis scripts
 results/          # verified machine-readable experiment tables
-app/              # full-screen paper viewer
+app/              # full-screen conference-presentation viewer
 public/           # website images and qualitative evidence
 worker/           # website deployment entry point
 tests/            # rendered-site checks
@@ -122,7 +120,6 @@ Folders such as `db/`, `drizzle/`, and `examples/` support the research-showcase
 
 | Artifact | Purpose |
 |---|---|
-| [Full paper](docs/PolypDG-Lite-full-paper.pdf) | Sixteen-page ICATI 2026 manuscript with methodology, experiments, discussion, and references |
 | [Conference presentation](docs/PolypDG-Lite-conference-presentation.pdf) | Fifteen-slide conference talk retained as a supplementary overview |
 | [`results/stagewise_summary.csv`](results/stagewise_summary.csv) | Verified stage-by-stage segmentation results |
 | [`results/deployment_benchmark.csv`](results/deployment_benchmark.csv) | FP32/FP16 speed, memory, power, and energy measurements |
